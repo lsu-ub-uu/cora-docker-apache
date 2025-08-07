@@ -27,7 +27,7 @@
 
 	<artifactId>cora-docker-apache</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>Cora docker for Apache</name>
 
 	<properties>
@@ -39,6 +39,6 @@
 		<connection>scm:git:https://github.com/lsu-ub-uu/cora-docker-apache.git</connection>
 		<developerConnection>scm:git:https://github.com/lsu-ub-uu/cora-docker-apache.git</developerConnection>
 		<url>https://github.com/lsu-ub-uu/cora-docker-apache.git</url>
-		<tag>cora-docker-apache-1.0.0</tag>
+		<tag>release/1.0</tag>
 	</scm>
 </project>
