@@ -1,5 +1,5 @@
 ARG APACHE_VERSION=2
-FROM httpd:${APACHE_VERSION} as build
+FROM httpd:${APACHE_VERSION} AS build
 
 RUN apt-get update && \
     apt-get install -y libapache2-mod-shib libapache2-mod-qos libapache2-mod-evasive &&\
@@ -8,7 +8,7 @@ RUN apt-get update && \
 
 FROM httpd:${APACHE_VERSION}
 COPY --from=build /usr/lib/apache2/modules/mod_shib.so /usr/local/apache2/modules/
-COPY --from=build /usr/lib/apache2/modules/mod_evasive20.so /usr/local/apache2/modules/
+COPY --from=build /usr/lib/apache2/modules/mod_evasive.so /usr/local/apache2/modules/
 COPY --from=build /usr/lib/apache2/modules/mod_qos.so /usr/local/apache2/modules/
 
 RUN apt-get update && \
