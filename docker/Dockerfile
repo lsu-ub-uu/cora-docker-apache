@@ -15,7 +15,7 @@ RUN apt-get update && \
     apt-get install -y supervisor lynx shibboleth-sp-utils &&\
 	rm -rf /var/lib/apt/lists/*
 
-COPY /etc/shibbolet/ ./files/shibbolet/*
+COPY files/shibboleth/* /etc/shibboleth/ 
 
 COPY files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN mkdir -p /var/run/shibboleth
