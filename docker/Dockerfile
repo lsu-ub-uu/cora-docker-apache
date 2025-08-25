@@ -9,8 +9,10 @@ FROM httpd:${APACHE_VERSION}
 COPY --from=build /usr/lib/apache2/modules/mod_shib.so /usr/local/apache2/modules/
 
 RUN apt-get update && \
-    apt-get install -y supervisor lynx shibboleth-sp-utils &&\
-	rm -rf /var/lib/apt/lists/*
+    apt-get install -y \
+	supervisor \
+	shibboleth-sp-utils \
+	&& rm -rf /var/lib/apt/lists/*
 
 COPY files/shibboleth/* /etc/shibboleth/ 
 

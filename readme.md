@@ -1,15 +1,29 @@
-Cora Docker Apache
+# Cora Docker Apache
 
-The goal of this project is to create a Cora common image of an Apache with Shibboleth.
+The goal of this project is to create **a common Docker image** of *Apache with Shibboleth* for Cora.  
+This image acts as the foundation for system-specific Apache + Shibboleth images.
 
-In order to have a fully working apache with an specific shibboleth installation it needs to be completed running systeone-docker-apache, alvin-docker-apache and diva-docker-apache
+The base image (`cora-docker-apache`) provides a fully working Apache setup with Shibboleth.  
+It is extended by three system-specific images:
 
-All common configurations files for shibboleth can be found in the folder docker/files/shibboleth.
+- **systeone-docker-apache**  
+- **alvin-docker-apache**  
+- **diva-docker-apache**
 
-No certificates are included in this phase.
+## Common Shibboleth Configuration
+All **common configuration files** for Shibboleth are included directly in this repository under: docker/files/shibboleth.
 
-Specific configurations files for shibboleth are inclueded in systeone-docker-apache, alvin-docker-apache and diva-docker-apache.
+## Project-Specific Shibboleth Configurations
+Each project (`systeone`, `alvin`, and `diva`) includes its own specific Shibboleth configuration files, extending the common base.
 
-Certificates are injected during pod creation in helm. See cora-deployment
+To main files are included here:
+- **httpd.conf** : Specific apache configuration for the project
+- **shibboleth2.xml** Specific shibboleth configuration for the project. All the members shibboleths endpoints are included here.
 
-TO BE CONTINUED...
+An specifict shibboleth2.xml and an apache routing configuration is intended to be 
+
+## Certificates
+Certificates are **not included in the Docker image**.  
+They are injected dynamically during pod creation via **Helm**. See cora-deployment
+
+
