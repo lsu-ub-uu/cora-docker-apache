@@ -27,7 +27,7 @@
 
 	<artifactId>cora-docker-apache</artifactId>
 	<packaging>pom</packaging>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.1.1-SNAPSHOT</version>
 	<name>Cora docker for Apache</name>
 
 	<properties>
