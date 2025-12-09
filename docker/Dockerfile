@@ -20,4 +20,7 @@ COPY files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN mkdir -p /var/run/shibboleth
 RUN chown 100:102 /var/run/shibboleth
 
+COPY files/apache/coraConfig.conf /usr/local/apache2/conf/extra/coraConfig.conf
+RUN echo "Include conf/extra/coraConfig.conf" >> /usr/local/apache2/conf/httpd.conf
+
 EXPOSE 80
