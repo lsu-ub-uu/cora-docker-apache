@@ -12,6 +12,7 @@ RUN apt-get update && \
     apt-get install -y \
 	supervisor \
 	shibboleth-sp-utils \
+	nano \
 	&& rm -rf /var/lib/apt/lists/*
 
 COPY files/shibboleth/* /etc/shibboleth/ 
