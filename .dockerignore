@@ -1,0 +1,22 @@
+# Build artifacts
+target/
+
+# IDE files
+.settings/
+.project
+*.iml
+.idea/
+.vscode/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+LICENSE
+
+# Maven wrapper
+.mvn/
+mvnw
+mvnw.cmd
